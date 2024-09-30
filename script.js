@@ -17,28 +17,28 @@ DomElement.prototype.selectorDivP = function() {
         newDiv.classList.add(String(this.selector).slice(1));
         insertion.appendChild(newDiv);
         newDiv.style.cssText = `
-        height: ${this.height} + 'px';
-        width: ${this.width} + 'px';
+        height: ${this.height}px;
+        width: ${this.width}px;
         background: ${this.bg};
-        fontSize: ${this.fontSize} + 'px';
+        font-size: ${this.fontSize}px;
     `;
     }
     if (this.selector[0] === "#") {
         const newP = document.createElement("p");
-        newP.innerHTML = "Я новый параграф";
+        newP.innerHTML = "Я новый параграф. Ураааааа! Жизнь прекрасна!";
         newP.setAttribute( "id", String(this.selector).slice(1));
         insertion.appendChild(newP);
         newP.style.cssText = `
-            height: ${this.height} + 'px';
-            width: ${this.width} + 'px';
+            height: ${this.height}px;
+            width: ${this.width}px;
             background: ${this.bg};
-            fontSize: ${this.fontSize} + 'px';
+            font-size: ${this.fontSize}px;
         `;
     }
 }
 
-const elem1 = new DomElement(".divo", 25, 15, "#red", 10);
-const elem2 = new DomElement("#pnm", 40, 10, "#green", 50);
+const elem1 = new DomElement(".divo", 150, 500, "red", 25);
+const elem2 = new DomElement("#pnm", 140, 500, "green", 40);
 
 elem1.selectorDivP();
 elem2.selectorDivP();
