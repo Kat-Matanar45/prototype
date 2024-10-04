@@ -9,7 +9,7 @@ class First {
 }
 
 class Second extends First {
-    hello2() {
+    hello() {
         super.hello();
         console.log(`А я наследуемый метод!`)
     }
@@ -19,7 +19,7 @@ const elem = new First("Кирилл");
 const elem2 = new Second("Саша");
 
 elem.hello();
-elem2.hello2(); 
+elem2.hello(); 
 
 console.log(elem);
 console.log(elem2);
