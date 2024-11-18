@@ -1,7 +1,5 @@
 const insertion = document.querySelector('#new');
 
-console.log(insertion);
-
 const DomElement = function(selector, height, width, bg, fontSize) {
     this.selector = selector;
     this.height = height;
@@ -40,6 +38,30 @@ elem1.selectorDivP();
 elem2.selectorDivP();
 const kubElement = elem3.selectorDivP();
 
-kubElement.style.position = 'absolute';
+document.addEventListener("DOMContentLoaded", () => {
+    alert("DOM готов!");
+  });
 
-console.log(elem3);
+kubElement.style.position = 'absolute';
+kubElement.style.color = '#fff';
+kubElement.style.top = '400px'; 
+kubElement.style.left = '10px';
+
+document.addEventListener('keydown', (e) => {
+    let n = 10;
+    let top = parseInt(kubElement.style.top) || 0;
+    let left = parseInt(kubElement.style.left) || 0;
+
+    if (e.code === 'ArrowUp') {
+        kubElement.style.top = (top - n) + 'px';
+    }
+    if (e.code === 'ArrowDown') {
+        kubElement.style.top = (top + n) + 'px';
+    }
+    if (e.code === 'ArrowLeft') {
+        kubElement.style.left = (left - n) + 'px';
+    }
+    if (e.code === 'ArrowRight') {
+        kubElement.style.left = (left + n) + 'px';
+    }
+  });
